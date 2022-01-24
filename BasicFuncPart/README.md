@@ -5,7 +5,7 @@ Work I did:
  2. IFDParser:: Line 15
  3. Game:: Line 55-58
  4. Map:: operator<<
- 5.Author of UNA_CS_Adventures.ifd
+ 5. Author of UNA_CS_Adventures.ifd
 
 Everything else was created by Dr. Daniel Ray
 
