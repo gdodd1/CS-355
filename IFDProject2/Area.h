@@ -11,10 +11,10 @@ class Area{
     	description = desc;
     }
     void setGoal(bool g){
-	goal = g;		
+	goal = g;
     }
     void setID(bool id){
-	instadeath = id;		
+	instadeath = id;
     }
     string getDescription(){
     	return description;
@@ -26,7 +26,7 @@ class Area{
 	return goal;
     }
     void displayArea(){
-	cout<<description<<endl;		
+	cout<<description<<endl;
     }
     void search(){
         bool found = false;
@@ -36,20 +36,20 @@ class Area{
         if(current == NULL){
             cout <<"There are no items in this area\n";
         }
-        if(next != NULL){
+        /**if(next != NULL){
             if(current->info->GetSR() == ){
-                
+
             }
             temp = next;
             next = next->link;
             current = temp;
 
-        }
-        
+        }**/
+
     }
   private:
     uLList<Item*> items;
     string description;
     bool instadeath;
-    bool goal;	
+    bool goal;
 };

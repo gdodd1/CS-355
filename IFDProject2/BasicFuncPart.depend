@@ -34,3 +34,47 @@
 
 1642172184 /home/skilet1/teaching/8.2022Spring/CS355/Projects/IFProject1/BasicFuncPart/Player.h
 
+1643730206 source:c:\users\ssingh21\desktop\ifdproject2\main.cpp
+	"Game.h"
+
+1643730205 c:\users\ssingh21\desktop\ifdproject2\game.h
+	"Map.h"
+	"Player.h"
+
+1643730205 c:\users\ssingh21\desktop\ifdproject2\map.h
+	<vector>
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<stdlib.h>
+	"IFDParser.h"
+	"LinkData.h"
+	"Area.h"
+
+1643730205 c:\users\ssingh21\desktop\ifdproject2\ifdparser.h
+	<vector>
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<stdlib.h>
+
+1643730205 c:\users\ssingh21\desktop\ifdproject2\linkdata.h
+	<iostream>
+
+1643730942 c:\users\ssingh21\desktop\ifdproject2\area.h
+	<string>
+	<iostream>
+	"Item.h"
+	"ull.h"
+
+1643730205 c:\users\ssingh21\desktop\ifdproject2\item.h
+	<iostream>
+
+1643730206 c:\users\ssingh21\desktop\ifdproject2\ull.h
+	<iostream>
+	<cassert>
+
+1643730205 c:\users\ssingh21\desktop\ifdproject2\player.h
+
