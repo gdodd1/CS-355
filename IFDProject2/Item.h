@@ -7,28 +7,28 @@ class Item{
     int SR;
 
     public:
-        void SetName(string n){
+        void setName(string n){
             name = n;
         }
-        void SetDescription(string d){
+        void setDesc(string d){
             description = d;
         }
-        void SetSR(int r){
+        void setSR(int r){
             SR = r;
         }
-        string GetName(){
+        string getName(){
             return name;
         }
         string getDesc(){
             return description;
         }
-        int GetSR(){
+        int getSR(){
             return SR;
         }
-        void DisplayName(){
+        void displayName(){
             cout << name;
         }
-        void DisplayDesc(){
+        void displayDesc(){
             cout << description;
         }
         friend ostream& operator<<(ostream& os, Item& item){
