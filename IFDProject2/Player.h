@@ -33,6 +33,36 @@ class Player{
 		}
 	}
 
+	void inventory(){
+		Item* current = items.getFirst();
+		Item* next = current.link;
+		Item* temp = current;
+		if(items == nullptr){
+			cout << "No Items Are In Your Inventory.\n";
+		}
+		else{
+			cout << "You Have The Following Items:\n";
+			while(next != nullptr){
+				cout << "\t" << items->info << endl;
+
+				temp = next;
+				current = next;
+				next = current.link;
+			};
+		}
+	}
+
+	void take(){
+		string itemInput;
+		cout << "Take What Item? ";
+		cin >> itemInput;
+
+		
+
+
+	}
+
+		uLList<Item*> items;
   private:
 		areaNode* currentLocation;
 		areaNode* lastLocation;

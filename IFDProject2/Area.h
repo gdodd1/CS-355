@@ -29,26 +29,22 @@ class Area{
 	cout<<description<<endl;
     }
     void search(){
-        bool found = false;
         nodeType<Item*>* current = items.getFirst();
         nodeType<Item*>* next = current;
         nodeType<Item*>* temp;
         if(current == NULL){
             cout <<"There are no items in this area\n";
+            return;
         }
-        /**if(next != NULL){
-            if(current->info->GetSR() == ){
-
-            }
-            temp = next;
-            next = next->link;
-            current = temp;
-
-        }**/
+        cout<<"The following items are in this area:\n";
+        while(current != nullptr){
+            cout<<"\t"<<current->info->getName()<<endl;
+            current = current->link;
+        }
 
     }
-  private:
     uLList<Item*> items;
+  private:
     string description;
     bool instadeath;
     bool goal;
