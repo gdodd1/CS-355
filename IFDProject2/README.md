@@ -5,5 +5,8 @@ Credit - Anything <em>**not specified**</em> was made by our professor, Dr. Ray:
 - Item.h Formatted - Singh
 - Item.h Function Conventions Fixed - Singh
 - TEST 1 Completed -- 2/1/22
+- TEST 2 COMPLETED
+- AREA.h, ULL & items #IF GUARDS
+- Area.h Search function Running
   
 ![](https://media.giphy.com/media/3orieOFMRP77evkiZy/giphy.gif)
