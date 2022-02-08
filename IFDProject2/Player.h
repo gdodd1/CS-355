@@ -35,21 +35,18 @@ class Player{
 
 	void inventory(){
 		nodeType<Item*>* current = items.getFirst();
-		nodeType<Item*>* next = current->link;
-		nodeType<Item*>* temp = current;
-		if(*current == NULL){
+		//nodeType<Item*>* next = current->link;
+		//nodeType<Item*>* temp = current;
+		if(current == nullptr){
 			cout << "No Items Are In Your Inventory.\n";
 		}
-		// else{
-		// 	cout << "You Have The Following Items:\n";
-		// 	while(next != nullptr){
-		// 		cout << "\t" << items->info << endl;
-
-		// 		temp = next;
-		// 		current = next;
-		// 		next = current.link;
-		// 	};
-		// }
+		else{
+		 	cout << "You Have The Following Items:\n";
+		 	while(current != nullptr){
+		 		cout << "\t" << current->info->getName() << endl;
+				current = current->link;
+		 	}
+		} 
 	}
 
 	void take(){
