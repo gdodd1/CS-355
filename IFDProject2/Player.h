@@ -33,10 +33,27 @@ class Player{
 		}
 	}
 
+    nodeType<Item*>* searchIt(string itemInput){
+        nodeType<Item*>* current = items.getFirst();
+		if(current == nullptr){
+			cout << "No Items Are In This Area.\n";
+		}
+		else{
+		 	cout << "You Have The Following Items:\n";
+		 	while(current != nullptr){
+		 		cout << "\t" << current->info->getName() << endl;
+                if(current->info->getName() == itemInput){
+                    cout<<"founded "<<current->info->getName()<<endl;
+                    return current;
+                }
+				current = current->link;
+		 	}
+		}
+        return nullptr;
+    }
+
 	void inventory(){
 		nodeType<Item*>* current = items.getFirst();
-		//nodeType<Item*>* next = current->link;
-		//nodeType<Item*>* temp = current;
 		if(current == nullptr){
 			cout << "No Items Are In Your Inventory.\n";
 		}
@@ -46,7 +63,7 @@ class Player{
 		 		cout << "\t" << current->info->getName() << endl;
 				current = current->link;
 		 	}
-		} 
+		}
 	}
 
 	void take(){
@@ -54,12 +71,44 @@ class Player{
 		cout << "Take What Item? ";
 		cin >> itemInput;
 
-		
-
-
+        cout<<"Take\n";
+        nodeType<Item*>* current = currentLocation->info.items.getFirst();
+		if(current == nullptr){
+			cout << "No Items Are In This Area.\n";
+		}
+		else{
+		 	while(current != nullptr){
+                if(current->info->getName() == itemInput){
+                    cout<<"You have taken: "<<current->info->getName()<<endl;
+					break;
+				}
+				current = current->link;
+		 	}
+			// adding into inventory
+			items.insertLast(current);
+		}
+        cout<<"\nTake End\n";
 	}
 
-		uLList<Item*> items;
+    void leave(){
+        string lItem;
+        cout<<"Leave what item? ";
+        cin>>lItem;
+
+        cout<<"Leave\n";
+        searchIt(lItem);
+    }
+
+    void examine(){
+        string item;
+        cout<<"What examine? ";
+        cin>>item;
+
+        cout<<"Examine\n";
+        searchIt(item);
+    }
+
+	uLList<Item*> items;
   private:
 		areaNode* currentLocation;
 		areaNode* lastLocation;

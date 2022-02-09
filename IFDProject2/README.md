@@ -8,6 +8,5 @@ Credit - Anything <em>**not specified**</em> was made by our professor, Dr. Ray:
 - TEST 2 COMPLETED
 - AREA.h, ULL & items #IF GUARDS
 - Area.h Search function Running
-- Player not working
   
 ![](https://media.giphy.com/media/3orieOFMRP77evkiZy/giphy.gif)
