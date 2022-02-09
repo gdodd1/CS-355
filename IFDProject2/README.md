@@ -8,5 +8,6 @@ Credit - Anything <em>**not specified**</em> was made by our professor, Dr. Ray:
 - TEST 2 COMPLETED
 - AREA.h, ULL & items #IF GUARDS
 - Area.h Search function Running
+- Player.h Error - Singh 2/9/22 : could not add any item into list
   
 ![](https://media.giphy.com/media/3orieOFMRP77evkiZy/giphy.gif)
