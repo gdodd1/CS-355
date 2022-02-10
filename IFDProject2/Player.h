@@ -1,4 +1,7 @@
-#include "areaNode.h"
+#ifndef PLAYER_H
+#define PLAYER_H
+
+
 
 class Player{
   public:
@@ -154,3 +157,5 @@ class Player{
 		areaNode* lastLocation;
 
 };
+
+#endif

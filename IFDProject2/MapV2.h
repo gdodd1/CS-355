@@ -1,5 +1,6 @@
 #include<iostream>
 #include "Map.h"
+#include "Player.h"
 using namespace std;
 
 class MapV2 : public Map{
@@ -117,13 +118,48 @@ void makeItem(){
 void InsertItems(){
 
 	for(int i = 0; i < itemVec.size(); i++){
-		areasVec[itemVec[i]->getSR()]->info.items.insertLast(itemVec[i]); 
+		areasVec[itemVec[i]->getSR() - 1]->info.items.insertLast(itemVec[i - 1]); 
 	}
 
 }
 
+void resetItems(){
+	
+	for(int i = 0; i < itemVec.size(); i++){
+		areasVec[itemVec[i]->getSR() - 1]->info.items.insertLast(itemVec[i - 1]); 
+	}
+}
 
+friend ostream& operator<<(ostream& os, MapV2& map){
+			os<<"******************************************************************"<<endl;
+			os<<"CHEATING!!!! Printing the set of areas and connections on the map."<<endl;
+			os<<"******************************************************************"<<endl;
+			for(int i=0; i<map.areasVec.size(); i++){
+				os<<"This is area: "<<i+1<<endl;
+				os<<map.areasVec[i]->info.getDescription()<<endl;
+				if(map.areasVec[i]->info.getID() == 1){
+					os<<"Area is INSTADEATH."<<endl;
+				}
+				if(map.areasVec[i]->info.getGoal() == 1){
+					os<<"Area is GOAL."<<endl;
+				}
+				os<<"Connections:"<<endl;
+				os<<"\t u: Area #"<<map.reverseLookUp(map.areasVec[i]->u)<<endl;
+				os<<"\t d: Area #"<<map.reverseLookUp(map.areasVec[i]->d)<<endl;
+				os<<"\t l: Area #"<<map.reverseLookUp(map.areasVec[i]->l)<<endl;
+				os<<"\t r: Area #"<<map.reverseLookUp(map.areasVec[i]->r)<<endl;
 
+				os<<"\nItems for area " << i << ": " << map.areasVec[i]->info.getDescription();
+				bool printedItem = false;
+				for(int itemIterator = 0; itemIterator < map.itemVec.size(); itemIterator++){
+					if(map.areasVec[i]->info.items.search(map.itemVec[itemIterator])){
+
+						os<< map.itemVec[itemIterator]->getName(); 
+					}
+				}
+			}
+			return os;
+		}
 
 
 

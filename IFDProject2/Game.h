@@ -4,6 +4,7 @@
 class Game{
 	private:
 		Player player1;
+		
 		Map map;
 
   	public:
