@@ -57,22 +57,23 @@ public:
 	
 	void printNames() const
 	{
-	    	nodeType<Type> *current; //pointer to traverse the list
-	    	current = first;    //set current so that it points to 
+		nodeType<Type> *current; //pointer to traverse the list
+		current = first;    //set current so that it points to 
 	        
-	        //the first node
+		//the first node
 		if(first == NULL){
 			cout<<"No items in list."<<endl;
 		}
-	    	while (current != NULL) //while more data to print
-	    	{
-	    		cout<<"\t";
-	        	current->info->displayName();
-	        	current = current->link;
-	    	}
+		while (current != NULL) //while more data to print
+		{
+			cout<<"\t";
+			current->info->displayName();
+			current = current->link;
+		}
 			
 	}//end print
 
+	
 
     	int length() const
 	{

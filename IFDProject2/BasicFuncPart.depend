@@ -34,14 +34,20 @@
 
 1642172184 /home/skilet1/teaching/8.2022Spring/CS355/Projects/IFProject1/BasicFuncPart/Player.h
 
-1643730206 source:c:\users\ssingh21\desktop\ifdproject2\main.cpp
+1644523668 source:c:\users\ssingh21\desktop\ifdproject2\main.cpp
 	"Game.h"
 
-1643730205 c:\users\ssingh21\desktop\ifdproject2\game.h
-	"Map.h"
+1644523668 c:\users\ssingh21\desktop\ifdproject2\game.h
+	"MapV2.h"
 	"Player.h"
+	"ull.h"
+	"Item.h"
 
-1643730205 c:\users\ssingh21\desktop\ifdproject2\map.h
+1644523668 c:\users\ssingh21\desktop\ifdproject2\mapv2.h
+	<iostream>
+	"Map.h"
+
+1644523668 c:\users\ssingh21\desktop\ifdproject2\map.h
 	<vector>
 	<iostream>
 	<fstream>
@@ -52,7 +58,7 @@
 	"LinkData.h"
 	"Area.h"
 
-1643730205 c:\users\ssingh21\desktop\ifdproject2\ifdparser.h
+1644523668 c:\users\ssingh21\desktop\ifdproject2\ifdparser.h
 	<vector>
 	<iostream>
 	<fstream>
@@ -60,21 +66,21 @@
 	<sstream>
 	<stdlib.h>
 
-1643730205 c:\users\ssingh21\desktop\ifdproject2\linkdata.h
+1644523668 c:\users\ssingh21\desktop\ifdproject2\linkdata.h
 	<iostream>
 
-1643730942 c:\users\ssingh21\desktop\ifdproject2\area.h
+1644523668 c:\users\ssingh21\desktop\ifdproject2\area.h
 	<string>
 	<iostream>
 	"Item.h"
 	"ull.h"
 
-1643730205 c:\users\ssingh21\desktop\ifdproject2\item.h
+1644523668 c:\users\ssingh21\desktop\ifdproject2\item.h
 	<iostream>
 
-1643730206 c:\users\ssingh21\desktop\ifdproject2\ull.h
+1644523668 c:\users\ssingh21\desktop\ifdproject2\ull.h
 	<iostream>
 	<cassert>
 
-1643730205 c:\users\ssingh21\desktop\ifdproject2\player.h
+1644523668 c:\users\ssingh21\desktop\ifdproject2\player.h
 

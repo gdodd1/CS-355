@@ -75,7 +75,7 @@ class Player{
 		string itemInput;
 		cout << "Take what item? ";
 		getline(cin, itemInput);
-
+		bool found = false;
 		nodeType<Item*>* current = currentLocation->info.items.getFirst();
 
 		if (current == nullptr)
@@ -85,11 +85,14 @@ class Player{
 				if (current->info->getName() == itemInput){
 					cout << "You have taken: " << current->info->getName() << endl;
 					items.insertLast(current->info);
-				}
-				else{
-					cout << "No item by that name here\n";
+					currentLocation->info.items.deleteNode(current->info);
+					found = true;
+					break;
 				}
 				current = current->link;
+			}
+			if(!found){
+				cout << "No item by that name here.\n";
 			}
 		}
 

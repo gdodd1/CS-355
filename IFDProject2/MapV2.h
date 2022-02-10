@@ -97,7 +97,7 @@ void makeItem(){
 					nextToken = parser.getNext();
 					tempItemPtr->setSR(stoi(nextToken));
 				}
-				else if(nextToken == "</desc>" || nextToken == "</star>"){
+				else if(nextToken == "</desc>" || nextToken == "</star>" || nextToken == "</name>"){
 				  //do nothing
 				}
 				else{
@@ -118,16 +118,17 @@ void makeItem(){
 void InsertItems(){
 
 	for(int i = 0; i < itemVec.size(); i++){
-		areasVec[itemVec[i]->getSR() - 1]->info.items.insertLast(itemVec[i - 1]); 
+		areasVec[itemVec[i]->getSR() - 1]->info.items.insertLast(itemVec[i]); 
 	}
 
 }
 
 void resetItems(){
 	
-	for(int i = 0; i < itemVec.size(); i++){
-		areasVec[itemVec[i]->getSR() - 1]->info.items.insertLast(itemVec[i - 1]); 
+	for(int i = 0; i < areasVec.size(); i++){
+		areasVec[i]->info.items.destroyList(); 
 	}
+	InsertItems();
 }
 
 friend ostream& operator<<(ostream& os, MapV2& map){
@@ -148,16 +149,12 @@ friend ostream& operator<<(ostream& os, MapV2& map){
 				os<<"\t d: Area #"<<map.reverseLookUp(map.areasVec[i]->d)<<endl;
 				os<<"\t l: Area #"<<map.reverseLookUp(map.areasVec[i]->l)<<endl;
 				os<<"\t r: Area #"<<map.reverseLookUp(map.areasVec[i]->r)<<endl;
-
-				os<<"\nItems for area " << i << ": " << map.areasVec[i]->info.getDescription();
-				bool printedItem = false;
-				for(int itemIterator = 0; itemIterator < map.itemVec.size(); itemIterator++){
-					if(map.areasVec[i]->info.items.search(map.itemVec[itemIterator])){
-
-						os<< map.itemVec[itemIterator]->getName(); 
-					}
-				}
 			}
+			for (int i = 0; i < map.areasVec.size(); i++){
+				
+				os<<"\nItems for area " << i << ": " << map.areasVec[i]->info.getDescription() << endl;
+				map.areasVec[i]->info.items.printNames();
+			};
 			return os;
 		}
 
