@@ -22,7 +22,7 @@ struct areaNode
 };
 
 class Map{
-	private:
+	protected:
 		vector<areaNode*> areasVec;
 		int areacnt;
 
@@ -36,66 +36,6 @@ class Map{
 		bool ifderr;
 
 	public:
-		Map(){
-			ifderr = false;
-			parser.tokenIt();
-
-			nextToken = parser.getNext();
-
-			if(nextToken == "<game>"){
-				parser.eatToken();
-				nextToken = parser.getNext();
-				while(nextToken != "</game>"){  //consider what happens when run out of tokens && not error state
-					if(nextToken == "<area>"){
-						parser.eatToken();
-						nextToken = parser.getNext();
-						makeArea();
-					}
-					else if(nextToken == "<links>"){
-						parser.eatToken();
-						nextToken = parser.getNext();
-						makeLinks();
-					}
-					else{
-						cout<<"Parse Error Location 1"<<endl;
-						ifderr = true;
-						break;
-					}
-					parser.eatToken();
-					nextToken = parser.getNext();
-				}// while !</game>
-
-				if(ifderr){
-					cout<<" :: ERROR :: IF Document Formatting Error"<<endl;
-					cout<<"Game Loading Failed"<<endl;
-					cout<<"General Area of Parsing Failure:"<<endl;
-					cout<<"-------------------------------------"<<endl;
-					cout<<nextToken<<endl;
-					parser.eatToken();
-					nextToken = parser.getNext();
-					cout<<nextToken<<endl;
-					parser.eatToken();
-					nextToken = parser.getNext();
-					cout<<nextToken<<endl;
-					parser.eatToken();
-					nextToken = parser.getNext();
-					cout<<nextToken<<endl;
-					cout<<"-------------------------------------"<<endl;
-					return;
-				}
-				//cout<<"::Found </game>::"<<endl;
-			}
-			else{
-				cout<<" :: ERROR :: No \"<game>\" tag found."<<endl;
-				cout<<"Game Loading Failed"<<endl;
-			}
-
-			//link up areas
-			linkLinks();
-
-
-		}//constructor
-
 		void makeArea(){
 			int id;
 			int goal;

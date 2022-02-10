@@ -29,7 +29,7 @@ class Item{
             return SR;
         }
         void displayName(){
-            cout << name;
+            cout << name << endl;
         }
         void displayDesc(){
             cout << description;

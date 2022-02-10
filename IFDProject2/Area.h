@@ -1,3 +1,6 @@
+#ifndef AREA_H
+#define AREA_H
+
 #include <string>
 #include <iostream>
 #include "Item.h"
@@ -49,3 +52,5 @@ class Area{
     bool instadeath;
     bool goal;
 };
+
+#endif

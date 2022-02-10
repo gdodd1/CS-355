@@ -1,3 +1,8 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
+
+
 class Player{
   public:
     Player(){
@@ -65,47 +70,88 @@ class Player{
 		 	}
 		}
 	}
-
+	//Garrett
 	void take(){
 		string itemInput;
-		cout << "Take What Item? ";
-		cin >> itemInput;
+		cout << "Take what item? ";
+		getline(cin, itemInput);
+		bool found = false;
+		nodeType<Item*>* current = currentLocation->info.items.getFirst();
 
-        cout<<"Take\n";
-        nodeType<Item*>* current = currentLocation->info.items.getFirst();
-		if(current == nullptr){
-			cout << "No Items Are In This Area.\n";
-		}
+		if (current == nullptr)
+			cout << "No items are in this area to take\n";
 		else{
-		 	while(current != nullptr){
-                if(current->info->getName() == itemInput){
-                    cout<<"You have taken: "<<current->info->getName()<<endl;
+			while(current != nullptr){
+				if (current->info->getName() == itemInput){
+					cout << "You have taken: " << current->info->getName() << endl;
+					items.insertLast(current->info);
+					currentLocation->info.items.deleteNode(current->info);
+					found = true;
 					break;
 				}
 				current = current->link;
-		 	}
-			// adding into inventory
-			items.insertLast(current);
+			}
+			if(!found){
+				cout << "No item by that name here.\n";
+			}
 		}
-        cout<<"\nTake End\n";
-	}
 
+	}
+	//Garrett
     void leave(){
+		bool found = false;
         string lItem;
         cout<<"Leave what item? ";
-        cin>>lItem;
+        getline(cin, lItem);
 
-        cout<<"Leave\n";
-        searchIt(lItem);
+		nodeType<Item*>* current = items.getFirst();
+		if(current == nullptr){
+			cout << "\nYou have no items in your Inventory\n";
+		}
+		else{
+			//Iterates through ull and searches for the item with the name that's inputted
+		 	while(current != nullptr){
+				 //compares input to the name of the current item name of the iteration in the Player::items ull
+                if(current->info->getName() == lItem){
+                    cout<<"You have dropped: "<<current->info->getName()<<endl;
+					items.deleteNode(current->info);
+					currentLocation->info.items.insertFirst(current->info);
+					found = true;
+				}
+				current = current->link;
+		 	}
+			 //checks if item is found, and if not prints no item found
+			if (found == false){
+				cout << "\nNo item by that name in your inventory.\n";
+			}
+		}
     }
-
+	//Garrett
     void examine(){
+		bool found = false;
         string item;
-        cout<<"What examine? ";
-        cin>>item;
+        cout<<"Examine what item?  ";
+        getline(cin, item);
 
-        cout<<"Examine\n";
-        searchIt(item);
+        nodeType<Item*>* current = items.getFirst();
+		if(current == nullptr){
+			cout << "\nYou have no items in your Inventory\n";
+		}
+		else{
+			//Iterates through ull and searches for the item with the name that's inputted
+		 	while(current != nullptr){
+				 //compares input to the name of the current item name of the iteration in the Player::items ull
+                if(current->info->getName() == item){
+                    cout << current->info->getDesc() << endl;
+					found = true;
+				}
+				current = current->link;
+		 	}
+			 //checks if item is found, and if not prints no item found
+			if (found == false){
+				cout << "\nNo item by that name in your inventory.\n";
+			}
+		}
     }
 
 	uLList<Item*> items;
@@ -114,3 +160,5 @@ class Player{
 		areaNode* lastLocation;
 
 };
+
+#endif
