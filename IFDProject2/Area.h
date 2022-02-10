@@ -30,8 +30,8 @@ class Area{
     }
     void search(){
         nodeType<Item*>* current = items.getFirst();
-        nodeType<Item*>* next = current;
-        nodeType<Item*>* temp;
+        // nodeType<Item*>* next = current;
+        // nodeType<Item*>* temp;
         if(current == NULL){
             cout <<"There are no items in this area\n";
             return;
