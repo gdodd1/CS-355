@@ -67,7 +67,7 @@ MapV2(){
 
 			//link up areas
 			linkLinks();
-
+			InsertItems();
 
 		//constructor
 }
@@ -114,7 +114,13 @@ void makeItem(){
 
 }
 
+void InsertItems(){
 
+	for(int i = 0; i < itemVec.size(); i++){
+		areasVec[itemVec[i]->getSR()]->info.items.insertLast(itemVec[i]); 
+	}
+
+}
 
 
 
