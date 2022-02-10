@@ -69,49 +69,27 @@ class Player{
 	}
 	//Garrett
 	void take(){
-		bool found = false;
 		string itemInput;
-		cout << "Take What Item? ";
+		cout << "Take what item? ";
 		getline(cin, itemInput);
 
-        cout<<"Take\n";
-        nodeType<Item*>* current = currentLocation->info.items.getFirst();
-		cout << "\n*** Current set *** \n";
-		
-		if(current == nullptr){
-			cout << "No Items Are In This Area.\n";
-		}
+		nodeType<Item*>* current = currentLocation->info.items.getFirst();
+
+		if (current == nullptr)
+			cout << "No items are in this area to take\n";
 		else{
-			//Iterates through ull and searches for the item with the name that's inputted
-		 	while(current != nullptr){
-				 cout << "\n\n ***In while loop ***\n\n";
-				 //compares input to the name of the current item name of the iteration in the Player::items ull
-				cout << "\n\n***if start ***\n\n";
-                if(current->info->getName() == itemInput){
-
-					cout << "\n\n***Iterated***\n\n";
-
-                    cout<<"You have taken: "<<current->info->getName()<<endl;
-					cout << "\n\n*** insert try ***\n\n";
+			while(current != nullptr){
+				if (current->info->getName() == itemInput){
+					cout << "You have taken: " << current->info->getName() << endl;
 					items.insertLast(current->info);
-					cout << "\n\n***Item inserted into inventory***\n\n";
-					currentLocation->info.items.deleteNode(current->info);
-					cout << "\n\n***Node deleted from Area::items***\n\n";
-					found = true;
 				}
 				else{
-				current = current->link;
-		 		cout << "\n\n***Current set to current->link***\n\n";
+					cout << "No item by that name here\n";
 				}
-				
-				 //cout << "\n\n***Name Changed***\n\n";
-			 }
-			 //checks if item is found, and if not prints no item found
-			if (found == false){
-				cout << "No item by that name found here.\n";
+				current = current->link;
 			}
 		}
-        cout<<"\n\nTake End\n\n";
+
 	}
 	//Garrett
     void leave(){
@@ -122,7 +100,7 @@ class Player{
 
 		nodeType<Item*>* current = items.getFirst();
 		if(current == nullptr){
-			cout << "/nYou have no items in your Inventory\n";
+			cout << "\nYou have no items in your Inventory\n";
 		}
 		else{
 			//Iterates through ull and searches for the item with the name that's inputted
@@ -141,9 +119,6 @@ class Player{
 				cout << "\nNo item by that name in your inventory.\n";
 			}
 		}
-
-        cout<<"Leave done\n";
-        
     }
 	//Garrett
     void examine(){
