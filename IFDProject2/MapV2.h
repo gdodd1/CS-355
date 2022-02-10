@@ -83,21 +83,20 @@ void makeItem(){
 				if(nextToken == "<desc>"){
 					parser.eatToken();
 					nextToken = parser.getNext();
-
-					tempItemPtr->info.setDescription(nextToken);
+					
+					tempItemPtr->setDesc(nextToken);
 				}
 				else if(nextToken == "<name>"){
 					parser.eatToken();
 					nextToken = parser.getNext();
-
-					istringstream ss(nextToken);
-          				getline(ss, xstr, ',');
-          				tempItemPtr->info.setID(atoi(xstr.c_str()));
-
-          				getline(ss, xstr, ',');
-					tempItemPtr->info.setGoal(atoi(xstr.c_str()));
+					tempItemPtr->setName(nextToken);
 				}
-				else if(nextToken == "</desc>" || nextToken == "</feats>"){
+				else if(nextToken == "<star>"){
+					parser.eatToken();
+					nextToken = parser.getNext();
+					tempItemPtr->setSR(stoi(nextToken));
+				}
+				else if(nextToken == "</desc>" || nextToken == "</star>"){
 				  //do nothing
 				}
 				else{
