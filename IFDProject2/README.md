@@ -8,6 +8,8 @@ Credit - Anything <em>**not specified**</em> was made by our professor, Dr. Ray:
 - TEST 2 COMPLETED
 - AREA.h, ULL & items #IF GUARDS
 - Area.h Search function Running
-- Player not working
+- Player.h Error - Singh 2/9/22 : could not add any item into list
+- Areanode file added for testing and main changed
+- Project Done - 2/10/22 -- 2:17pm
   
 ![](https://media.giphy.com/media/3orieOFMRP77evkiZy/giphy.gif)
