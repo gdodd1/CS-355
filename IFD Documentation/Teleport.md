@@ -3,7 +3,7 @@
 **TOC**
 - [Needs](https://github.com/gdodd1/CS-355/blob/main/IFD%20Documentation/Teleport.md#needs)
 - [Code](https://github.com/gdodd1/CS-355/blob/main/IFD%20Documentation/Teleport.md#code)
-- [Tags]()
+- [Tags](https://github.com/gdodd1/CS-355/blob/main/IFD%20Documentation/Teleport.md#tags-explained)
 
 ## Needs
 1. Vector or ULL of all areas the user has visited
