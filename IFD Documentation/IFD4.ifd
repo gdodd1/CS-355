@@ -1,6 +1,7 @@
 <game>
 
     <pytpe>hpsp</ptype>
+    <lives>5</lives>
     
     <links>
         <linkset>1,1,1,1</linkset>
@@ -16,15 +17,6 @@
         <linkset>11,12,8,11</linkset>
         <linkset>12,12,12,12</linkset>
     </links>
-
-    <item>
-        <weapon>
-            <name>Lightsaber</name>
-            <desc>A sword like object that seems to have a blade made of plasma</desc>
-            <star>1</star>
-            <damage>15</damage>
-        </weapon>
-    </item>
 
     <item>
         <use>
@@ -45,6 +37,12 @@
             <actmess>
         </consume>
     </item>
+
+    <companion>
+        <name>Carl the Companion</name>
+        <desc>Carl can smell items in the adjacent rooms</desc>
+        <action>Smell</action>
+    </companion>
 
     <area>
         <desc>You wake up in a dark cave with a small light on the wall</desc>
