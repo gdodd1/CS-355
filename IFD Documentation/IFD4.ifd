@@ -1,0 +1,108 @@
+<game>
+
+    <pytpe>hpsp</ptype>
+    
+    <links>
+        <linkset>1,1,1,1</linkset>
+        <linkset>2,4,2,3</linkset>
+        <linkset>3,4,2,3</linkset>
+        <linkset>4,5,4,3</linkset>
+        <linkset>5,5,6,5</linkset>
+        <linkset>6,7,6,5</linkset>
+        <linkset>7,7,7,7</linkset>
+        <linkset>8,8,8,11</linkset>
+        <linkset>9,9,9,10</linkset>
+        <linkset>10,10,10,10</linkset>
+        <linkset>11,12,8,11</linkset>
+        <linkset>12,12,12,12</linkset>
+    </links>
+
+    <item>
+        <weapon>
+            <name>Lightsaber</name>
+            <desc>A sword like object that seems to have a blade made of plasma</desc>
+            <star>1</star>
+            <damage>15</damage>
+        </weapon>
+    </item>
+
+    <item>
+        <use>
+            <name>Torch</name>
+            <desc>This could be used to emit light</desc>
+            <star>1</star>
+            <actmess>You can now see the doors in the dungeon. </actmess>
+            <actar>1</actar>
+            <rule>1,r,2</rule>
+        </use>
+    </item>
+
+    <item>
+        <comsume>
+            <name>Potion</name>
+            <desc>A red potion with a label reading, "health potion"</desc>
+            <star>2</star>
+            <actmess>
+        </consume>
+    </item>
+
+    <area>
+        <desc>You wake up in a dark cave with a small light on the wall</desc>
+        <feats>0,0</desc>
+    </area>
+
+    <area>
+        <feats>0,0</desc>
+        <desc>Room 2</desc>
+    </area>
+
+    <area>
+        <feats>0,0</feats>
+        <desc>Room 3</desc>
+    </area>
+
+    <area>
+        <feats>0,0</feats>
+        <desc>Room 4</desc>
+    </area>
+
+    <area>
+        <feats>0,0</feats>
+        <desc>Room 5</desc>
+    </area>
+
+    <area>
+        <feats>0,0</feats>
+        <desc>Room 6</desc>
+    </area>
+
+    <area>
+        <feats>0,0</feats>
+        <desc>Room 7</desc>
+    </area>
+
+    <area>
+        <feats>0,0</feats>
+        <desc>Room 8</desc>
+    </area>
+
+    <area>
+        <feats>0,0</feats>
+        <desc>Room 9</desc>
+    </area>
+
+    <area>
+        <feats>0,0</feats>
+        <desc>Room 10</desc>
+    </area>
+
+    <area>
+        <feats>1,0</feats>
+        <desc>Room 11</desc>
+    </area>
+
+    <area>
+        <feats>0,1</feats>
+        <desc>Room 12</desc>
+    </area>
+</game>
