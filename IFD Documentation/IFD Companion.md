@@ -26,7 +26,7 @@ Companion should be able to help the user in some way.
   <type> Dog </type>
   <name> Clifford </name>
   <action> Smell </action
-</companion
+</companion>
 ```
 
 OR
